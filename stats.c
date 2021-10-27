@@ -1,7 +1,7 @@
 #include "stats.h"
 
 struct Stats compute_statistics(const float* numberset, int setlength) {
-    int sum = 0;
+    float sum = 0;
     struct Stats s;
     s.average = 0;
     s.min = 0;
@@ -24,6 +24,11 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     }
     s.average = sum/setlength;
     
+    if(s.average>10.2)
+    {
+        emailAlertCallCount++;
+        ledAlertCallCount++;
+    }
     return s;
 }
 
