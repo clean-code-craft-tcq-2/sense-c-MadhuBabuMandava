@@ -24,7 +24,7 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     }
     s.average = sum/setlength;
     
-    return Stats;
+    return s;
 }
 
 int emailAlertCallCount = 0;
